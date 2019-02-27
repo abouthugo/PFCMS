@@ -1,7 +1,6 @@
 {
-  "name": "index.js",
+  "name": "index",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,5 +9,15 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arregoitiaj1/PFCMS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arregoitiaj1/PFCMS/issues"
+  },
+  "homepage": "https://github.com/arregoitiaj1/PFCMS#readme",
+  "description": ""
 }
