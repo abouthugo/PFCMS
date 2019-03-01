@@ -12,6 +12,7 @@
 for (let i = 0; i < shipNums; i++) {
   let shipID = i;
   // assign ship location to shipID, datbase?
+  // shipCoor cannot be equivalent to another shipCoor
 
 }
 
