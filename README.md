@@ -1,1 +1,1 @@
-![alt text](https://raw.githubusercontent.com/arregoitiaj1/PFCMS/ProjectDiagram.png)
+![alt text](/ProjectDiagram.png)
