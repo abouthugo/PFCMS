@@ -7,4 +7,8 @@ https://scotch.io/tutorials/use-expressjs-to-deliver-html-files
 
 # Project Diagram
 
-![project_diagram](/ProjectDiagram.png)
+![project_diagram](ProjectDiagram.png)
+
+# Layout
+
+![project_layout](ProjectLayout.png)
