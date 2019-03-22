@@ -4,6 +4,7 @@ https://medium.com/@LindaVivah/the-beginners-guide-understanding-node-js-express
 
 https://scotch.io/tutorials/use-expressjs-to-deliver-html-files
 
+https://github.com/MLH/mlh-hackathon-nodejs-starter
 
 # Project Diagram
 
