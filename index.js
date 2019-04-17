@@ -10,9 +10,12 @@ const server = http.createServer((req, res) => {
   res.end('Hello World\n');
 });
 
+
 //Get location of potential pirates
 console.log('Potential threats: ');
-location.threats();
+var threats = location.threats();
+
+console.log(threats);
 
 //Get location of military support
 console.log('Potential support: ');

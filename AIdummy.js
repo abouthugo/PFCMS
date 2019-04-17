@@ -14,11 +14,11 @@ util.inherits(Ships, events.EventEmitter);
 
 
 // Setting Map Size
-  let mapX = 100;
-  let mapY = 100;
+  let mapX = 6;
+  let mapY = 6;
 
 // Use MapSize to determine number of ships
-  var shipNums = 20 //Math.round(Math.sqrt(mapX + mapY));
+  var shipNums = 5 //Math.round(Math.sqrt(mapX + mapY));
 
   var shipID = [];
 
