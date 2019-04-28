@@ -35,3 +35,20 @@ userRoutes.get('/:username', function(req, res) {
 });
 
 app.use('/users', userRoutes);
+
+let Request = require('./models/request.model');
+var requestRoutes = express.Router();
+
+
+requestRoutes.post('/', function(req, res) {
+    let request = new Request(req.body);
+    request.save()
+      .then(request => {
+        res.status(200).send('request has been submitted');
+      })
+      .catch(err => {
+        res.status(400).send('Request failed');
+      });
+});
+
+app.use('/requests', requestRoutes);

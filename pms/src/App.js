@@ -72,14 +72,14 @@ class App extends Component {
       .then(res => {
         // check password
         var correctPass = res.data.password;
-        if (this.state.password == correctPass){
+        if (this.state.password === correctPass){
           this.setState({
             login: false
           });
           console.log('switch');
         }
         // check account type
-        if (res.data.accountType == 'admin'){
+        if (res.data.accountType === 'admin'){
           this.setState({
             admin: true
           });

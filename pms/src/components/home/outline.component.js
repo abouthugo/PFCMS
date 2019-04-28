@@ -25,7 +25,9 @@ class Outline extends Component {
   render() {
 
     return (
-
+      <div>
+        <Request/>
+      </div>
     );
   }
 }

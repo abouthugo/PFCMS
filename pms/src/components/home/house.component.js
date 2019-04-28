@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import Map from "./map.component";
-import Chat from "./chat.component";
-import Request from "./request.component";
+import Outline from "./outline.component";
 import Admin from "./admin.component";
 
 // import "bootstrap/dist/css/bootstrap.min.css";
@@ -17,7 +15,7 @@ class House extends Component {
   // to start just input username, password, and accountType
   // from there modify to Name and Country
 
-  // 
+  //
 
 
   ifAdmin() {
@@ -49,7 +47,7 @@ class House extends Component {
             </div>
           </nav>
           <br/>
-          <Route path="/" exact component={Map} />
+          <Route path="/" exact component={Outline} />
           <Route path="/admin" component={Admin} />
         </div>
       </Router>
