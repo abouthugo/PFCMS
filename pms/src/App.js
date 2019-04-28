@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-
-import Welcome from "./components/landing/welcome.component";
 import Map from "./components/home/map.component";
 import House from "./components/home/house.component";
 
+
+import "./App.css"
+import logo from "./logo.JPG";
 
 
 class App extends Component {
@@ -34,30 +35,30 @@ class App extends Component {
     }
 
 
-
   display() {
     if (!this.state.login){
-      return <div> <div> <House/> </div>  </div>
+      return <div> <div> <House value={this.state.admin}/> </div>  </div>
     }
     else {
       // login form
-      return (<div>
-        <form onSubmit={this.props.onSubmit} className="modal-content animate">
-          <div className="container">
-            <label><b>Username</b></label>
+      return (
+        <div className="login">
+          <img src={logo} width="100" height="100" className="center"/>
+        <h1> Pirate Crisis OS </h1>
+        <form className="modal-content animate">
+            <label><b>Username</b></label> <br/>
             <input  type="text"
                         onChange={this.onChangeUser}
                         required
                         />
-            <label ><b>Password</b></label>
+            <label ><b>Password</b></label> <br/>
             <input  type="text"
                         onChange={this.onChangePass}
                         required
                         />
             {this.props.children}
-          </div>
+            <button onClick={this.onSubmit}> Login </button>
         </form>
-        <button onClick={this.onSubmit}> Login </button>
       </div>
       );
     }
@@ -69,12 +70,19 @@ class App extends Component {
     var serverLocation = "http://192.168.1.5:4000/users/" + this.state.username;
       axios.get(serverLocation)
       .then(res => {
+        // check password
         var correctPass = res.data.password;
         if (this.state.password == correctPass){
           this.setState({
             login: false
           });
           console.log('switch');
+        }
+        // check account type
+        if (res.data.accountType == 'admin'){
+          this.setState({
+            admin: true
+          });
         }
     })
     .catch(function (error){

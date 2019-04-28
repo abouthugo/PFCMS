@@ -1,19 +1,8 @@
 import React from "react";
 import './welcome.css';
 
-const user = [];
-const userPass = [];
-const admin = [];
-const adminPass = [];
 
 export default class Welcome extends React.Component {
-
-  // onSubmit(e) {
-  //   e.preventDefault();
-  //
-  //   console.log('test');
-  //
-  // }
 
   render() {
 

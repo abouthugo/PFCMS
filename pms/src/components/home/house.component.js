@@ -1,22 +1,61 @@
 import React, { Component } from 'react';
-
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Map from "./map.component";
-import Navbar from "./navbar.component"
 import Chat from "./chat.component";
 import Request from "./request.component";
+import Admin from "./admin.component";
+
+// import "bootstrap/dist/css/bootstrap.min.css";
+
+import logo from "./../../logo.JPG";
 
 class House extends Component {
+
+  // complete admin component
+  // simple form for adding Users
+  // to start just input username, password, and accountType
+  // from there modify to Name and Country
+
+  // 
+
+
+  ifAdmin() {
+    if (this.props.value){
+      return (
+        <li className="navbar-item">
+          <Link to="/admin" className="nav-link">Users</Link>
+        </li>
+      );
+    }
+  }
+
   render() {
 
     return (
-      //need to render two different navbars depending on accountType
-      // how do you pass username to next component?
-      // through props?? such as <House value=this.state.username>
-      // use this username to axios.get acctType and load nav
-      <Navbar/>
+      <Router>
+        <div className="container">
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+
+              <Link to="/" className="navbar-brand">
+                <img src={logo} width="30" height="30" alt="/" />
+              </Link>
+
+            <Link to="/" className="navbar-brand">Pirate Fighting Crisis Management System</Link>
+            <div className="collpase navbar-collapse">
+              <ul className="navbar-nav mr-auto">
+              {this.ifAdmin()}
+              </ul>
+            </div>
+          </nav>
+          <br/>
+          <Route path="/" exact component={Map} />
+          <Route path="/admin" component={Admin} />
+        </div>
+      </Router>
+
     );
   }
 }
 
-export default House;
+export default House
