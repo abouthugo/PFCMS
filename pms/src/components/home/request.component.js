@@ -87,19 +87,20 @@ class Request extends Component {
           <label>Supplies <br/> (One per Person)</label>
           <label>
             <input  type="number"
-                    style={{width: "50px"}}
+                    style={{width: "50px", borderStyle: "dotted"}}
                     onChange={this.onChangeMedic}
                     />
             <b>Medical</b>
           </label>
           <label >
           <input  type="number"
-                  style={{width: "50px"}}
+                  style={{width: "50px", borderStyle: "dotted"}}
                   onChange={this.onChangeMedic}
                   />
             <b>Food & Water</b>
           </label>
           <label>Military Support</label>
+          <ul>
           <label>
             <input  type="checkbox"
                       onChange={this.onChangeHeli}
@@ -119,6 +120,7 @@ class Request extends Component {
                     />
             <b>Fighter Jet</b>
           </label>
+          </ul>
           {this.props.children}
           <input type="submit" value="Make Request"/>
       </form>

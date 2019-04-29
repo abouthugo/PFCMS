@@ -9,7 +9,7 @@ var User = props => (
     <td>{props.user.username}</td>
     <td>{props.user.password}</td>
     <td>{props.user.accountType}</td>
-    <td><Link to={"/remove/" + props.user._id}>Remove</Link></td>
+    <td><button> Remove </button></td>
     <td></td>
   </tr>
 )
@@ -17,6 +17,7 @@ var User = props => (
 export default class UserList extends Component {
   constructor(props) {
     super(props);
+      this.remove = this.remove.bind(this);
       this.state = {users: []};
   }
 
@@ -29,6 +30,17 @@ export default class UserList extends Component {
       .catch(function (error){
         console.log(error);
       });
+  }
+
+  remove() {
+    var serverLocation = Server + 'users/remove/' + this.props.match.params.id;
+    axios.delete(serverLocation, )
+      .then(res => {
+        console.log('deleted user');
+      })
+      .catch(function (err){
+        console.log(err);
+      })
   }
 
   // handleDelete= () => {
