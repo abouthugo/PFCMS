@@ -19,7 +19,7 @@ class House extends Component {
 
 
   ifAdmin() {
-    if (this.props.value){
+    if (this.props.admin){
       return (
         <li className="navbar-item">
           <Link to="/admin" className="nav-link">Users</Link>
@@ -47,7 +47,7 @@ class House extends Component {
             </div>
           </nav>
           <br/>
-          <Route path="/" exact component={Outline} />
+          <Route path="/" exact render={(props) => <Outline user= {this.props.user}/>} />
           <Route path="/admin" component={Admin} />
         </div>
       </Router>

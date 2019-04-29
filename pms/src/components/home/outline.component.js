@@ -4,6 +4,10 @@ import Map from "./map.component";
 import Chat from "./chat.component";
 import Request from "./request.component";
 
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
+
 
 class Outline extends Component {
   // takes 1 condition (username) for Chat
@@ -26,8 +30,16 @@ class Outline extends Component {
 
     return (
       <div>
-        <Request/>
-        
+        <Container>
+          <Row>
+            <Col xs='4'>
+              <Request/>
+            </Col>
+            <Col xs='8'>
+              <Chat user={this.props.user}/>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

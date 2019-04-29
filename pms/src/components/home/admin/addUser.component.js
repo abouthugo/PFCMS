@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
-import Container from 'react-bootstrap/Container'
-import Col from 'react-bootstrap/Col'
 
 
 const Server = "http://192.168.1.5:4000/";

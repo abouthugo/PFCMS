@@ -40,7 +40,7 @@ class App extends Component {
 
   display() {
     if (!this.state.login){
-      return <div> <div> <House value={this.state.admin}/> </div>  </div>
+      return <div> <div> <House admin={this.state.admin} user={this.state.username}/> </div>  </div>
     }
     else {
       // login form
@@ -63,7 +63,7 @@ class App extends Component {
                       {this.props.children} <br/>
 
             <button  onClick={this.onSubmit}> Login </button>
-          
+
         </form>
       </div>
       );
