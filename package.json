@@ -9,7 +9,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "handlebars": "^4.1.1"
+    "handlebars": "^4.1.1",
+    "react": "^16.8.6"
   },
   "devDependencies": {},
   "repository": {

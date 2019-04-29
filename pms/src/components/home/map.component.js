@@ -169,12 +169,39 @@ export default class Board extends React.Component {
       );
     }
 
+test = () => {
+  let jsx = []
 
+  for(var i = 0; i < 7; i++) {
+    jsx.push(<div className='board-row'>);
+    for(this.j = 0; j <= 105; j++) {
+      jsx.push({this.renderSquare(${j})});
+      if(j % 15 == 0)
+        break;
+    }
+    jsx.push(</div>);
+  }
+  return jsx;
+}
   render() {
-
+    var test = function() {
+      var jsx = [];
+      for(var i = 0; i < 7; i++) {
+        jsx.push(<div className='board-row'>);
+        for(this.j = 0; j <= 105; j++) {
+          jsx.push(this.renderSquare({j}));
+          if(j % 15 == 0)
+            break;
+        }
+        jsx.push(</div>);
+      }
+      return jsx;
+    };
     return (
       <div>
       <div>
+      {test()}
+      /*
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
@@ -294,7 +321,7 @@ export default class Board extends React.Component {
           {this.renderSquare(102)}
           {this.renderSquare(103)}
           {this.renderSquare(104)}
-        </div>
+        </div>*/
 
       </div>
       </div>
