@@ -6,6 +6,9 @@ import House from "./components/home/house.component";
 
 
 import "./App.css"
+import "bootstrap/dist/css/bootstrap.min.css";
+
+
 import logo from "./logo.JPG";
 
 
@@ -46,18 +49,21 @@ class App extends Component {
           <img src={logo} width="100" height="100" className="center"/>
         <h1> Pirate Crisis OS </h1>
         <form className="modal-content animate">
-            <label><b>Username</b></label> <br/>
+            <label><b>Username: </b></label>
             <input  type="text"
                         onChange={this.onChangeUser}
                         required
-                        />
-            <label ><b>Password</b></label> <br/>
+                      />
+                    <br/>
+                  <label ><b>Password: </b></label>
             <input  type="text"
                         onChange={this.onChangePass}
                         required
                         />
-            {this.props.children}
-            <button onClick={this.onSubmit}> Login </button>
+                      {this.props.children} <br/>
+
+            <button  onClick={this.onSubmit}> Login </button>
+          
         </form>
       </div>
       );

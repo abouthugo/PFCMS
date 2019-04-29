@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Outline from "./outline.component";
-import Admin from "./admin.component";
+import Admin from "./admin/admin.component";
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 

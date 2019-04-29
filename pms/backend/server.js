@@ -22,6 +22,15 @@ connection.once('open', function() {
 let User = require('./models/users.model');
 var userRoutes = express.Router();
 
+userRoutes.get('/', function(req, res) {
+    User.find(function(err, users) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json(users);
+        }
+    });
+});
 
 userRoutes.get('/:username', function(req, res) {
     let user = req.params.username;
@@ -32,6 +41,17 @@ userRoutes.get('/:username', function(req, res) {
         res.json(user);
       }
     });
+});
+
+userRoutes.post('/add', function(req, res) {
+    let user = new User(req.body);
+    user.save()
+      .then(user => {
+        res.status(200).send('User has been submitted');
+      })
+      .catch(err => {
+        res.status(400).send('User creation failed');
+      });
 });
 
 app.use('/users', userRoutes);
